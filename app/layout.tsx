@@ -3,9 +3,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Duration — Time, in decimal.",
+  title: "Duration: hh:mm:ss to decimal hours",
   description:
-    "Convert a duration in hh:mm:ss to decimal hours. A simple, free calculator with instant results rounded to two decimal places.",
+    "Convert a duration in hh:mm:ss to decimal hours, rounded to two decimal places. Everything runs in your browser.",
 };
 
 export const viewport: Viewport = {
@@ -20,14 +20,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Link className="brand" href="/" aria-label="Duration home">
             <span className="brand-icon" aria-hidden="true">↗</span> duration<span className="brand-dot">.</span>
           </Link>
-          <span className="header-note">A little tool for your time</span>
         </header>
 
         {children}
 
         <footer className="site-footer">
-          <span>Made for every minute.</span>
-          <span>Private by default. Calculated in your browser.</span>
+          <span>Everything is calculated in your browser. Nothing you enter is sent anywhere.</span>
         </footer>
       </body>
     </html>

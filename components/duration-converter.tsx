@@ -36,9 +36,9 @@ export function DurationConverter() {
   const invalid = trimmed !== "" && hours === null;
 
   let resultHint = "Rounded to two decimal places.";
-  if (hours === null) resultHint = "Enter a duration to see your result.";
-  else if (copyStatus === "copied") resultHint = `${hours} copied to clipboard.`;
-  else if (copyStatus === "failed") resultHint = "Couldn't copy automatically. Select the result and copy it manually.";
+  if (hours === null) resultHint = "Enter a duration above.";
+  else if (copyStatus === "copied") resultHint = `Copied ${hours} to the clipboard.`;
+  else if (copyStatus === "failed") resultHint = "Couldn't copy automatically. Select the number and copy it yourself.";
 
   function updateValue(next: string) {
     resultVersion.current += 1;
@@ -71,13 +71,13 @@ export function DurationConverter() {
   return (
     <section className="converter" aria-label="Duration converter">
       <div className="input-panel">
-        <div className="panel-heading"><label htmlFor="duration">Enter your duration</label><span className="format-tag">HH:MM:SS</span></div>
+        <div className="panel-heading"><label htmlFor="duration">Duration</label><span className="format-tag">hh:mm:ss</span></div>
         <input
           ref={inputRef}
           id="duration"
           name="duration"
           type="text"
-          placeholder="01:30:00"
+          placeholder="0:00:00"
           autoComplete="off"
           autoCapitalize="off"
           spellCheck={false}
@@ -86,12 +86,12 @@ export function DurationConverter() {
           value={value}
           onChange={(event) => updateValue(event.target.value)}
         />
-        <p id="duration-hint" className="hint">Hours : minutes : seconds</p>
+        <p id="duration-hint" className="hint">Hours can go past 24. Minutes and seconds run from 00 to 59.</p>
         <p id="duration-error" className="error" aria-live="polite">
-          {invalid ? "Use hh:mm:ss, with whole hours and minutes and seconds between 00 and 59." : ""}
+          {invalid ? "That isn't a valid duration. Use hh:mm:ss, for example 2:05:00." : ""}
         </p>
         <div className="examples">
-          <span>Try an example</span>
+          <span>Examples</span>
           {EXAMPLES.map((example) => (
             <button
               key={example}
@@ -108,7 +108,7 @@ export function DurationConverter() {
       </div>
 
       <div className="result-panel">
-        <div className="panel-heading"><span id="result-label">Decimal hours</span><span className="result-mark" aria-hidden="true">↗</span></div>
+        <div className="panel-heading"><span id="result-label">Decimal hours</span></div>
         <div className="result-line">
           <output id="result" htmlFor="duration" aria-labelledby="result-label" aria-live="polite" aria-atomic="true">{hours ?? "—"}</output>
           <span className="unit" aria-hidden="true">hours</span>
@@ -120,11 +120,10 @@ export function DurationConverter() {
             disabled={hours === null || copyStatus === "copying"}
             onClick={copyResult}
           >
-            {copyStatus === "copied" ? "Copied!" : "Copy"}
+            {copyStatus === "copied" ? "Copied" : "Copy"}
           </button>
         </div>
         <p id="result-hint" className="result-hint" role="status">{resultHint}</p>
-        <div className="result-footer"><span className="live-dot" aria-hidden="true"></span> Instant conversion <span className="precision">2 decimal places</span></div>
       </div>
     </section>
   );

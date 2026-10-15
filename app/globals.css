@@ -15,17 +15,14 @@ button, input { font: inherit; }
 .brand { display: inline-flex; align-items: center; color: inherit; text-decoration: none; font-size: 25px; font-weight: 750; letter-spacing: -1px; }
 .brand-icon { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-right: 10px; background: #e66a3c; color: white; border-radius: 9px; font-size: 25px; font-weight: 400; }
 .brand-dot { color: #d7592b; }
-.header-note { color: #70756c; font-size: 12px; }
 main { width: min(800px, calc(100% - 40px)); margin: auto; padding-block: 72px 84px; }
 .intro { text-align: center; margin-bottom: 42px; }
-.eyebrow { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 10px; letter-spacing: 2px; font-weight: 650; color: #696f63; margin: 0 0 19px; }
-.eyebrow span { height: 6px; width: 6px; border-radius: 50%; background: #dc683c; }
 h1 { font-size: clamp(40px, 6vw, 62px); font-weight: 550; letter-spacing: -3px; line-height: 1.1; margin: 0 0 20px; }
 .subtitle { color: #74786e; font-size: 15px; line-height: 1.8; margin: 0; }
 .converter { overflow: hidden; background: white; border: 1px solid #e1e3d9; border-radius: 20px; box-shadow: 0 12px 32px #29311c06; }
 .input-panel { padding: 30px 34px 27px; }
 .panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; }
-.format-tag { font-size: 10px; font-weight: 500; letter-spacing: 1px; color: #70766a; background: #f4f5ef; padding: 6px 9px; border-radius: 5px; }
+.format-tag { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; font-weight: 500; color: #70766a; background: #f4f5ef; padding: 6px 9px; border-radius: 5px; }
 input { display: block; width: 100%; margin-top: 20px; border: 1px solid #dce0d3; background: #fdfdfb; color: #293121; border-radius: 10px; padding: 19px 22px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: clamp(28px, 5vw, 38px); font-weight: 450; letter-spacing: 2px; outline: none; }
 input::placeholder { color: #a5aa9d; opacity: 1; }
 input:focus { border-color: #7a8b64; box-shadow: 0 0 0 3px #798b631a; }
@@ -38,9 +35,8 @@ input[aria-invalid="true"] { border-color: #bf492f; }
 .examples button { border: 1px solid #e7e9e0; border-radius: 6px; background: #fff; color: #626958; font-size: 11px; padding: 7px 10px; cursor: pointer; font-variant-numeric: tabular-nums; }
 .examples button:hover { background: #f0f3e9; border-color: #c7cfb8; }
 button:focus-visible, a:focus-visible { outline: 2px solid #556841; outline-offset: 4px; }
-.result-panel { background: #eef2e5; padding: 27px 34px 20px; border-top: 1px solid #e2e7d7; }
+.result-panel { background: #eef2e5; padding: 27px 34px; border-top: 1px solid #e2e7d7; }
 .result-panel .panel-heading { color: #52623f; }
-.result-mark { font-size: 22px; font-weight: 400; }
 .result-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 13px; margin: 13px 0 5px; }
 .copy-button { margin-left: auto; min-height: 44px; min-width: 76px; padding: 9px 14px; border: 1px solid #c8d2b8; border-radius: 8px; background: #f8faf3; color: #52623f; font-size: 12px; font-weight: 600; cursor: pointer; }
 .copy-button:hover:not(:disabled) { background: #e2e9d7; }
@@ -48,10 +44,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #556841; outline-offs
 .clipboard-buffer { position: fixed; left: -9999px; top: 0; }
 output { font-size: clamp(40px, 8vw, 64px); font-weight: 500; letter-spacing: -2px; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; min-width: 0; }
 .unit { font-size: 19px; color: #6d7b5c; }
-.result-hint { color: #6d775f; font-size: 12px; min-height: 18px; margin: 9px 0 25px; }
-.result-footer { display: flex; align-items: center; gap: 6px; border-top: 1px solid #dce3d0; padding-top: 16px; color: #667357; font-size: 10px; }
-.live-dot { width: 5px; height: 5px; border-radius: 50%; background: #7b8f5e; }
-.precision { margin-left: auto; }
+.result-hint { color: #6d775f; font-size: 12px; min-height: 18px; margin: 9px 0 0; }
 .explanation { display: flex; justify-content: center; gap: 13px; margin: 30px auto 0; padding-inline: 10px; }
 .explanation-icon { display: grid; place-items: center; flex-shrink: 0; width: 30px; height: 30px; background: #edeee6; border-radius: 8px; color: #79816d; font-size: 20px; }
 h2 { font-size: 12px; font-weight: 600; margin: 0 0 7px; }
@@ -63,7 +56,6 @@ h2 { font-size: 12px; font-weight: 600; margin: 0 0 7px; }
 @media (max-width: 540px) {
   .site-header, .site-footer { width: calc(100% - 40px); }
   .site-header { padding-block: 23px; }
-  .header-note { display: none; }
   main { padding-block: 45px; }
   h1 { letter-spacing: -2px; }
   .subtitle { font-size: 13px; }

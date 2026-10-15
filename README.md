@@ -1,8 +1,8 @@
 # Duration
 
-A responsive Next.js website for converting `hh:mm:ss` into decimal hours, rounded to two decimal places.
+A small website that converts a duration in `hh:mm:ss` to decimal hours, rounded to two decimal places. For example, `1:45:00` becomes `1.75`.
 
-Enter a duration or select an example to get an instant result. Hours may exceed 24; minutes and seconds must each be two digits from `00` to `59`. Calculations stay in your browser.
+Hours can go past 24. Minutes and seconds must be two digits, from `00` to `59`. The conversion runs in the browser, so nothing you enter is sent to a server.
 
 ## Development
 
@@ -11,8 +11,8 @@ npm install
 npm run dev
 ```
 
-Then visit `http://localhost:3000`.
+Then open `http://localhost:3000`.
 
 ## Deployment
 
-The site is configured as a [static export](https://nextjs.org/docs/app/guides/static-exports). Run `npm run build` and upload the generated `out/` directory to any static web host.
+The site is built with Next.js as a [static export](https://nextjs.org/docs/app/guides/static-exports). Run `npm run build` and upload the generated `out/` directory to any static web host.
