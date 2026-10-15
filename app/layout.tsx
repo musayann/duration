@@ -18,7 +18,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <header className="site-header">
           <Link className="brand" href="/" aria-label="Duration home">
-            <span className="brand-icon" aria-hidden="true">↗</span> duration<span className="brand-dot">.</span>
+            {/* The colon of hh:mm:ss fading into a decimal point. Keep in sync with app/icon.svg. */}
+            <svg className="brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="16" fill="#e66a3c" />
+              <circle cx="16" cy="10.5" r="4.25" fill="#fff" fillOpacity={0.4} />
+              <circle cx="16" cy="21.5" r="4.25" fill="#fff" />
+            </svg>
+            duration<span className="brand-dot">.</span>
           </Link>
         </header>
 
